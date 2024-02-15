@@ -8,7 +8,7 @@ type HeaderProps = {
 const Header = ({ query, setQuery }: HeaderProps) => {
   return (
     <header className={styles.header}>
-      <input className={styles.input} type="text" placeholder='Search a Pokemon' value={query} onChange={(e) => setQuery(e.target.value)} />
+      <input className={styles.input} type="text" placeholder='Search a Pokemon' value={query} onChange={(event) => setQuery(event.target.value)} />
     </header>
   )
 }
