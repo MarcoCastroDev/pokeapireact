@@ -7,5 +7,11 @@ export function formatPokemonName(name: string): string {
         return name.replace(". ", "-");
     } else if (name.includes("farfetch'd")) {
         return name.replace("farfetch'd", "farfetchd");
+    } else if (name.includes("mime jr.")) {
+        return name.replace("mime jr.", "mime-jr");
     } else return name
+}
+
+export function waitFor(time: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, time));
 }
