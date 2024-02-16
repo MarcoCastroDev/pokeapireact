@@ -26,7 +26,7 @@ const Pokemons = () => {
     return <LoadingScreen />
   }
 
-  const filteredPokemons = pokemons?.slice(0, 494).filter((pokemon) =>{
+  const filteredPokemons = pokemons?.slice(0, 151).filter((pokemon) =>{
     return pokemon.name.toLowerCase().match(query.toLowerCase());
   })
 
@@ -35,7 +35,7 @@ const Pokemons = () => {
       <Header query={query} setQuery={setQuery} />
       <main>
         <nav className={styles.nav}>
-          {filteredPokemons?.slice(0, 494).map((pokemon) => (
+          {filteredPokemons?.slice(0, 151).map((pokemon) => (
           <Link key={pokemon.id} to={`/pokemons/${pokemon.name.toLowerCase()}`} className={styles.listItem}>
             <img src={pokemon.imgSrc} alt={pokemon.name} className={styles.listItemIcon} />
             <div className={styles.listItemText}>
