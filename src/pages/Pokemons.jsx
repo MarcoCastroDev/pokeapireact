@@ -1,12 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { BulbasaurPic } from '../components';
 import { Link } from 'react-router-dom'
 import styles from './pokemons.module.css'
+import { fetchPokemons } from '../api/fetchPokemons';
 
 const Pokemons = () => {
   const [query, setQuery] = useState("")
+  const [pokemons, setPokemons] = useState([])
+
+  useEffect(() => {
+    const fetchAllPokemons = async () => {
+      const allPokemons = await fetchPokemons();
+      setPokemons(allPokemons)
+    }
+    fetchAllPokemons();
+  })
 
   return (
     <>
