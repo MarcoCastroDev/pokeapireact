@@ -16,20 +16,22 @@ const Pokemons = () => {
       setPokemons(allPokemons)
     }
     fetchAllPokemons();
-  })
+  }, []);
 
   return (
     <>
       <Header query={query} setQuery={setQuery} />
       <main>
-        <nav>
-          <Link to="/" className={styles.listItem}>
-            <img src={BulbasaurPic} alt="Bulbasaur" className={styles.listItemIcon} />
+        <nav className={styles.nav}>
+          {pokemons?.slice(0, 151).map((pokemon) => (
+          <Link key={pokemon.id} to={`/pokemons/${pokemon.name.toLowerCase()}`} className={styles.listItem}>
+            <img src={pokemon.imgSrc} alt={pokemon.name} className={styles.listItemIcon} />
             <div className={styles.listItemText}>
-              <span>Bulbasaur</span>
-              <span>001</span>
+              <span>{pokemon.name}</span>
+              <span>{pokemon.id}</span>
             </div>
           </Link>
+          ))}
         </nav>
       </main>
       <Footer />
