@@ -6,13 +6,13 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <Link to="/pokemons" className={styles.footerLink}>
-                <img src={PokemonPic} alt="Pokeball" className={styles.footerIcon} /> Pokemons
+                <img src={PokemonPic} alt="Pokeball" className={styles.footerIcon} />
             </Link>
             <Link onClick={(event) => event.preventDefault()} to="/items" className={styles.footerLink}>
-                <img src={ItemsPic} alt="Pokeball" className={styles.footerIcon} />Items
+                <img src={ItemsPic} alt="Pokeball" className={styles.footerIcon} />
             </Link>
             <Link onClick={(event) => event.preventDefault()} to="/location" className={styles.footerLink}>
-                <img src={LocationPic} alt="Pokeball" className={styles.footerIcon} />Location
+                <img src={LocationPic} alt="Pokeball" className={styles.footerIcon} />
             </Link>
         </footer>
     )
